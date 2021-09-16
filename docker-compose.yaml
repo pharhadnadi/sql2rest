@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  diginava_ann:
+    container_name: diginava_ann
+    image: ir.isfahan.MSSQL2REST:399.12.0
+    build: .
+    #command: uvicorn main:app   --port 5474 --workers=2 --header DigiNava
+    # command: gunicorn --worker-tmp-dir /dev/shm  --bind 0.0.0.0:5474 --workers=2 --threads=4 --worker-class=gthread --log-file=- main:app
+    ports:
+      - 5475:80
+    environment:
+      DB_NAME: "db/db.json"
+
+    volumes:
+      - ./home/MSSQL2DB/db:/code/db
+ 
+    healthcheck:
+      test: ["CMD", "curl", "localhost:80"]
+      interval: 3s
+      start_period: 5s
+      retries: 5     
+
