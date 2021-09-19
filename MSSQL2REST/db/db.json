@@ -1,0 +1,18 @@
+{
+    "server":"172.30.200.137",
+    "database":"Farabar24",
+    "user":"DataManagement",
+    "password":"Data@Management123",
+    "methods":[
+       {
+          "Rasadkhane":"SELECT  *  FROM [fava].[V_آمارنامه_اطلاعات-رصدخانه_3120]"
+       },
+       {
+          "RasadkhaneSandbox":"SELECT  top 20 *  FROM [fava].[V_آمارنامه_اطلاعات-رصدخانه_3120]"
+       },
+   
+       {
+          "masraf":"SELECT *  FROM [fava].[V_سازمان-خدمات-موتوري_اطلاعات-مصرف-سوخت_1914]"
+       }
+    ]
+ }
